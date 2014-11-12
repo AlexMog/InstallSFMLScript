@@ -15,7 +15,21 @@ case $clean in
     *)
 	;;
 esac
+
 echo ""
+
+INSTALLDEP=0
+
+read -n1 -r -p "=> Installer les dépendances? (Y/n)" installdep
+case $installdep in
+    [yY][eE][sS]|[yY])
+	INSTALLDEP=1;;
+    *)
+	;;
+esac
+
+echo ""
+
 SCRIPT=$(readlink -f "$0")
 BASEDIR=$(dirname "$SCRIPT")
 
@@ -26,6 +40,13 @@ echo "=> Setting rights..."
 chmod +x ./install-sfml.sh
 chmod +x ./install-csfml.sh
 chmod +x ./install-libs.sh
+
+if [ $INSTALLDEP == 1 ];
+then
+    echo "==== Installing dependencies ===="
+    ./install-libs.sh
+    [ $? != 0 ] && echo "    Aborting install." && exit 1
+fi
 
 ./install-sfml.sh
 [ $? != 0 ] && echo "Aborting SFML install." && exit 1

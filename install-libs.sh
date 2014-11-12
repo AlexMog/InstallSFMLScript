@@ -19,7 +19,10 @@ command -v apt-get >/dev/null 2>&1 || {
     do
 	echo "=> $lib"
     done
+    exit 1
 }
+
+sudo apt-get update
 
 for lib in $libs
 do

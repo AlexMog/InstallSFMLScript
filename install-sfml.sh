@@ -8,9 +8,6 @@ echo "=> Getting to installation dir..."
 cd $BASEDIR
 pwd
 
-echo "=> Installing libs..."
-./install-libs.sh
-
 echo "=> Getting SFML from git..."
 git clone https://github.com/LaurentGomila/SFML.git
 

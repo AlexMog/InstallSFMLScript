@@ -5,10 +5,10 @@ mesa-devel
 libx11-devel
 libxrandr-devel
 libfreetype6-devel
-libglew1.5
+glew-devel
 libjpeg8-devel
-libsndfile1-devel
-libopenal-devel
+libsndfile-devel
+openal-devel
 cmake
 g++"
 

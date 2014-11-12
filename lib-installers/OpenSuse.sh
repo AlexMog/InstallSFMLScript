@@ -12,8 +12,8 @@ libopenal-devel
 cmake
 g++"
 
-command -v apt-get >/dev/null 2>&1 || {
-    echo "Command 'apt-get' not found. You need to install libs yourself. Libs to install:"
+command -v zypper >/dev/null 2>&1 || {
+    echo "Command 'zypper' not found. You need to install libs yourself. Libs to install:"
     for lib in $libs
     do
 	echo "=> $lib"
@@ -21,11 +21,11 @@ command -v apt-get >/dev/null 2>&1 || {
     exit 1
 }
 
-sudo apt-get update
+sudo zypper update
 
 for lib in $libs
 do
-    sudo apt-get install $lib
+    sudo zypper install $lib
     [ $? == 100 ] && echo "ERROR: Impossible to install $lib" && exit 1
 done
 

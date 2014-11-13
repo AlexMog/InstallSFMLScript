@@ -5,7 +5,7 @@
 ** Login   <aracthor@epitech.net>
 ** 
 ** Started on  Thu Nov 13 18:20:16 2014 
-** Last Update Thu Nov 13 19:03:39 2014 
+** Last Update Thu Nov 13 19:28:28 2014 
 */
 
 #include <SFML/Graphics.h>
@@ -17,9 +17,10 @@ void	gere_data()
 {
 }
 
-void		gere_events(sfRenderWindow* window)
+void		gere_events(sfRenderWindow* window, sfCircleShape* shape)
 {
   sfEvent	event;
+  sfVector2f	vector;
 
   while (sfRenderWindow_pollEvent(window, &event))
     {
@@ -42,6 +43,14 @@ void		gere_events(sfRenderWindow* window)
 		 event.mouseButton.x, event.mouseButton.y);
 	}
     }
+
+
+  if (sfKeyboard_isKeyPressed(sfKeyDown))
+    {
+      vector.x = 0;
+      vector.y = 1;
+      sfCircleShape_move(shape, vector);
+    }
 }
 
 void	gere_display(sfRenderWindow* window, sfCircleShape* shape)
@@ -58,7 +67,7 @@ void	loop(sfRenderWindow* window, sfCircleShape* shape)
   while (sfRenderWindow_isOpen(window))
     {
       gere_data();
-      gere_events(window);
+      gere_events(window, shape);
       gere_display(window, shape);
     }
 }

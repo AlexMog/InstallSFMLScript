@@ -5,7 +5,7 @@
 ** Login   <aracthor@epitech.net>
 ** 
 ** Started on  Thu Nov 13 18:20:16 2014 
-** Last Update Thu Nov 13 19:28:28 2014 
+** Last Update Thu Nov 13 19:32:53 2014 
 */
 
 #include <SFML/Graphics.h>
@@ -49,7 +49,12 @@ void		gere_events(sfRenderWindow* window, sfCircleShape* shape)
     {
       vector.x = 0;
       vector.y = 1;
-      sfCircleShape_move(shape, vector);
+      sfCircleShape_move(shape, vector); /* Fais bouger l'objet */
+      sfCircleShape_rotate(shape, 10); /* Fais tourner l'objet */
+      vector.x = 1.1;
+      vector.y = 1.1;
+      sfCircleShape_scale(shape, vector); /* Resize l'objet */
+      /* Merci captain obivious pour les commentaires */
     }
 }
 

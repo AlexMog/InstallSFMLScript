@@ -5,7 +5,7 @@
 ** Login   <aracthor@epitech.net>
 ** 
 ** Started on  Thu Nov 13 18:20:16 2014 
-** Last Update Thu Nov 13 18:55:17 2014 
+** Last Update Thu Nov 13 19:03:39 2014 
 */
 
 #include <SFML/Graphics.h>
@@ -57,7 +57,7 @@ void	loop(sfRenderWindow* window, sfCircleShape* shape)
 {
   while (sfRenderWindow_isOpen(window))
     {
-      gere_data(window);
+      gere_data();
       gere_events(window);
       gere_display(window, shape);
     }

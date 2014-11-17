@@ -73,7 +73,7 @@ SCRIPT=$(readlink -f "$0")
 BASEDIR=$(dirname "$SCRIPT")
 
 echo "==== Installing all the packages for CSFML and SFML ===="
-cd $BASEDIR
+cd "$BASEDIR"
 
 echo "=> Setting rights..."
 chmod +x ./lib-installers/*
@@ -108,13 +108,13 @@ fi
 ./install-csfml.sh
 [ $? != 0 ] && echo "Aborting CSFML install." && exit 1
 
-cd $BASEDIR
+cd "$BASEDIR"
 
 if [ $CLEANDIR == 1 ];
 then
     echo "==== Cleaning installation directory ===="
-    rm -irf $BASEDIR/CSFML
-    rm -irf $BASEDIR/SFML
+    rm -irf "$BASEDIR"/CSFML
+    rm -irf "$BASEDIR"/SFML
 fi
 
 echo "==== Installation ended with success ===="

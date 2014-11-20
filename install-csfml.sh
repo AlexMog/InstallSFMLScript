@@ -9,14 +9,14 @@ cd "$BASEDIR"
 pwd
 
 echo "=> Searching for an installed version..."
-VEXIST=$(sudo find /lib/ /usr/lib /usr/local/lib -name "libcsfml-*")
+VEXIST=$(sudo find /lib* /usr/lib* /usr/local/lib* -name "libcsfml-*")
 if [ "$VEXIST" != "" ];
 then
     echo "WARNING: /!\=> A version of the CSFML is already installed."
     echo "Files found:"
     for file in $VEXIST
     do
-	echo "-- file"
+	echo "-- $file"
     done
     read -n1 -r -p "Do you want to let me uninstall thoes files? (y/N)" resp
     CLEANOLD=0

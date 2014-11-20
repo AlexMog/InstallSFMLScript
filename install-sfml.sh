@@ -9,7 +9,7 @@ cd "$BASEDIR"
 pwd
 
 echo "=> Searching for an installed version..."
-VEXIST=$(sudo find /lib/ /usr/lib /usr/local/lib -name "libsfml-*")
+VEXIST=$(sudo find /lib* /usr/lib* /usr/local/lib* -name "libsfml-*")
 if [ "$VEXIST" != "" ];
 then
     echo "WARNING: /!\=>A version of the SFML is already installed. "

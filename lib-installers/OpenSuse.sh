@@ -10,7 +10,8 @@ libjpeg8-devel
 libsndfile-devel
 openal-devel
 cmake
-g++"
+g++
+libudev-devel"
 
 command -v zypper >/dev/null 2>&1 || {
     echo "Command 'zypper' not found. You need to install libs yourself. Libs to install:"

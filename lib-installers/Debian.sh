@@ -11,7 +11,8 @@ libsndfile1-dev
 libopenal-dev
 cmake
 g++
-libfreetype6-dev"
+libfreetype6-dev
+libudev-dev"
 
 command -v apt-get >/dev/null 2>&1 || {
     echo "Command 'apt-get' not found. You need to install libs yourself. Libs to install:"
